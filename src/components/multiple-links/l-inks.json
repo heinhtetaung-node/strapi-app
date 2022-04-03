@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_multiple_links_l_inks",
+  "info": {
+    "displayName": "LInks",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    }
+  }
+}
