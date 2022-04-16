@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trendings",
+  "info": {
+    "singularName": "trending",
+    "pluralName": "trendings",
+    "displayName": "Trending",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TrendingTitle": {
+      "type": "string"
+    },
+    "TrendingPhotos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "main_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::main-category.main-category",
+      "inversedBy": "trendings"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "trending"
+    }
+  }
+}

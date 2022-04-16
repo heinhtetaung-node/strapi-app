@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_categories",
+  "info": {
+    "singularName": "main-category",
+    "pluralName": "main-categories",
+    "displayName": "Main Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "trendings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::trending.trending",
+      "mappedBy": "main_category"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "main_category"
+    }
+  }
+}

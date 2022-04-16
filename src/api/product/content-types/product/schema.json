@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "integer"
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "materials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::material.material",
+      "inversedBy": "products"
+    },
+    "ShortDescription": {
+      "type": "text"
+    },
+    "LongDescription": {
+      "type": "richtext"
+    },
+    "NewArrival": {
+      "type": "boolean",
+      "default": false
+    },
+    "Promotion": {
+      "type": "boolean",
+      "default": false
+    },
+    "InStock": {
+      "type": "boolean",
+      "default": true
+    },
+    "WaitingDays": {
+      "type": "integer"
+    },
+    "trending": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::trending.trending",
+      "inversedBy": "products"
+    },
+    "Code": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Size": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ]
+    },
+    "UpTo": {
+      "type": "string"
+    },
+    "AvailableColor": {
+      "type": "string"
+    },
+    "main_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::main-category.main-category",
+      "inversedBy": "products"
+    },
+    "BestSeller": {
+      "type": "boolean",
+      "default": false
+    },
+    "PromotionPrice": {
+      "type": "integer"
+    }
+  }
+}
